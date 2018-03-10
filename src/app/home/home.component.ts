@@ -30,8 +30,14 @@ export class HomeComponent implements OnInit {
     .then( ofertas => {
       //outra trativa
       console.log('segundo then')
-      return ofertas
+      return new Promise( (resolve2,reject2) => {
+        setTimeout( () => {resolve2( ofertas ) }, 3000)
+       })
     })
+    .then( (ofertas: Oferta[]) => {
+        console.log('terceiro then after 3 secounds because wait promise resolved')
+        return ofertas
+    } )
     .catch( param => console.log(param) )
   }
 

@@ -4,15 +4,16 @@ import { OfertasServices } from '../ofertas.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [ OfertasServices ]
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ofertasService: OfertasServices) { }
 
   ngOnInit() {
-    let ofertas: OfertasServices = new OfertasServices()
-    console.log(ofertas.getOfertas());
+    let value = this.ofertasService.getOfertas()
+    console.log(value)
   }
 
 }

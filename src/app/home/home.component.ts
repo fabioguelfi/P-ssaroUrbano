@@ -19,9 +19,7 @@ export class HomeComponent implements OnInit {
     // console.log(this.ofertas)
 
     this.ofertasService.getOfertas()
-    .then((ofertas: Array<Oferta>) => {
-      this.ofertas = ofertas
-    })
+    .then((ofertas: Array<Oferta>) => this.ofertas = ofertas)
     .catch( param => console.log(param) )
   }
 

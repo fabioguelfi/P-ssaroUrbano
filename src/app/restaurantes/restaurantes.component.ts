@@ -16,9 +16,7 @@ export class RestaurantesComponent implements OnInit {
 
   ngOnInit() {
     this.ofertaServices.getOfertasPorCategoria('restaurante')
-    .then((ofertas: Oferta[]) => {
-      this.ofertas = ofertas
-    })
+    .then((ofertas: Oferta[]) => this.ofertas = ofertas)
   }
 
 }

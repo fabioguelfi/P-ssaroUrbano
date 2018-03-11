@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 //services
 
@@ -18,6 +19,7 @@ import { RodapeComponent } from './rodape/rodape.component';
     RodapeComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule
   ],
   providers: [],

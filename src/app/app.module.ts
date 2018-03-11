@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
 import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { RestaurantesComponent } from './restaurantes/restaurantes.component';
+import { DiversaoComponent } from './diversao/diversao.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { RodapeComponent } from './rodape/rodape.component';
     AppComponent,
     TopoComponent,
     HomeComponent,
-    RodapeComponent
+    RodapeComponent,
+    RestaurantesComponent,
+    DiversaoComponent
   ],
   imports: [
     HttpModule,

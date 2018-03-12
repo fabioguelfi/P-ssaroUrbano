@@ -49,14 +49,12 @@
     <div style="margin-bottom: 150px">
       <!-- navs -->
       <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" data-toggle="tab" href="#comoUsar" role="tab"
-            aria-selected="true">Como usar</a>
-          <a class="nav-item nav-link" data-toggle="tab" href="#aondeFica" role="tab"
-            aria-selected="false">Aonde fica?</a>
+        <div class="nav nav-tabs" >
+          <a class="nav-item nav-link" [routerLink]="['como-usar']" routerLinkActive="active">Como usar</a>
+          <a class="nav-item nav-link" [routerLink]="['onde-fica']" routerLinkActive="active">Aonde fica?</a>
         </div>
       </nav>
-      <div class="tab-content" id="nav-tabContent">
+      <div class="tab-content">
         <router-outlet></router-outlet>
       </div>
       <!-- end-navs -->

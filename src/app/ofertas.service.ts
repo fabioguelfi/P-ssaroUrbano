@@ -20,7 +20,14 @@ export class OfertasServices {
   public getOfertasPorCategoria(categoria: String): Promise<Oferta[]> {
     return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
                .toPromise()
-               .then(( resposta: any ) => resposta.json())
+               .then( ( resposta: any ) => resposta.json() )
+  }
+
+  public getOfertaPorId(id: Number): Promise<Oferta> {
+    return this.http.get(`http://localhost:3000/ofertas?id=${id}`)
+               .toPromise()
+               .then( ( resposta: any ) => resposta.json()[0] )
+               //[0] or .shift() to extract object in indice 0 in array
   }
 
 }

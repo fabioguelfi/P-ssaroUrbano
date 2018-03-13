@@ -28,13 +28,22 @@ export class OfertaComponent implements OnInit {
       })
 
       //observable (observavel)
-      let meuObservableTeste = Observable.create((observer: Observer<String>) => {
-        observer.next('Primeiro evento da stream')
+      let meuObservableTeste = Observable.create((observer: Observer<number>) => {
+        observer.next(1)
+        observer.next(2)
+        observer.next(3)
+        observer.next(4)
+        observer.next(5)
+        observer.next(6)
+        observer.next(7)
+        observer.complete()
       })
 
       //observable (observador)
       meuObservableTeste.subscribe(
-        (resultado: any) => console.log(resultado),
+        (resultado: number) => console.log(resultado + 10),
+        (erro: String) => console.log(erro),
+        () => console.log('a stream de eventos foi finalizada')
       )
 
       // let tempo = Observable.interval(3000)

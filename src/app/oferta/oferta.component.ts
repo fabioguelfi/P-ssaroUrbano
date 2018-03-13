@@ -18,10 +18,18 @@ export class OfertaComponent implements OnInit {
     private ofertasServices: OfertasServices) { }
 
   ngOnInit() {
+
     this.ofertasServices.getOfertaPorId(this.route.snapshot.params['id'])
       .then(( oferta: Oferta ) => {
         this.oferta = oferta
       })
+
+      this.route.params.subscribe(
+        (parametro: any) =>  { console.log(parametro) },
+        (erro: any) => { console.log(erro) },
+        () => console.log('processamento classificado como conluido')
+      )
+
     }
 
 }

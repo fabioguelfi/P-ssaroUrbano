@@ -6,6 +6,7 @@ import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-topo',
@@ -25,6 +26,9 @@ export class TopoComponent implements OnInit {
       .debounceTime(1000)
       .switchMap((termo: string) => {
         console.log('requisicao http para api', termo)
+        if(termo.trim() === '') {
+          return Observable.of(<Oferta[]>([]))
+        }
         return this.ofertasServices.pesquisaOfertas(termo)
       })
 

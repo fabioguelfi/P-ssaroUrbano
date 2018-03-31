@@ -1,9 +1,11 @@
+import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
 import { URL_API } from './app.api';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class OfertasServices {
@@ -41,10 +43,15 @@ export class OfertasServices {
 
   public getOndeFicaPorId(id: number): Promise<String> {
     return this.http.get(`${URL_API}/onde-fica?id=${id}`)
-    .toPromise()
-    .then((resposta: any) => {
-      return resposta.json()[0].descricao
-    })
+      .toPromise()
+      .then((resposta: any) => {
+        return resposta.json()[0].descricao
+      })
+  }
+
+  public pesquisaOfertas(termo: string): Observable<Oferta[]> {
+    return this.http.get(`${URL_API}/como-usar?descricao_oferta=${termo}`)
+      .map((response: any) => response.json())
   }
 
 }

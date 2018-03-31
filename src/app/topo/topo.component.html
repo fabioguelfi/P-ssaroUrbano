@@ -9,7 +9,8 @@
         </div>
         <div class="col-md-6">
           <input 
-          (keyup)="pesquisa($event)" 
+          (keyup)="pesquisa(termoDaPesquisa.value)" 
+          #termoDaPesquisa
           type="text" class="form-control" placeholder="Pesquise por ofertas" />
         </div>
         <div class="col-md-2">

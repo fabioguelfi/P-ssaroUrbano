@@ -18,6 +18,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 
 // pipe
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
+import { OrderCompraComponent } from './order-compra/order-compra.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
     OfertaComponent,
     ComoUsarComponent,
     OndeFicaComponent,
-    DescricaoReduzida
+    DescricaoReduzida,
+    OrderCompraComponent
   ],
   imports: [
     HttpModule,

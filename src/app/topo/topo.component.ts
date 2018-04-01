@@ -13,6 +13,7 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./topo.component.css'],
   providers: [OfertasServices]
 })
+
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>

@@ -12,7 +12,7 @@
           <input (keyup)="pesquisa(termoDaPesquisa.value)" #termoDaPesquisa type="text" class="form-control" placeholder="Pesquise por ofertas"
           />
           <ul class="list-group" style="position:absolute">
-            <li *ngFor="let ofer of oferta" class="list-group-item">{{ ofer.titulo | descricaoReduzida:10:3 | uppercase }}</li>
+            <li *ngFor="let ofer of ofertas | async" class="list-group-item">{{ ofer.titulo | descricaoReduzida:13 }}</li>
           </ul>
         </div>
         <div class="col-md-2">

@@ -1,14 +1,11 @@
 import { Observable } from 'rxjs/Observable';
 import { OfertasServices } from './../ofertas.service';
 import { Component, OnInit } from '@angular/core';
+
+import '../util/rxjs-extensions'
+
 import { Oferta } from '../shared/oferta.model';
 import { Subject } from 'rxjs/Subject';
-
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-topo',

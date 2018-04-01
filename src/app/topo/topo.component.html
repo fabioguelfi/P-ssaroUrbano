@@ -11,8 +11,12 @@
             <!-- {{ oferta | json | uppercase | lowercase }} -->
           <input (keyup)="pesquisa(termoDaPesquisa.value)" #termoDaPesquisa type="text" class="form-control" placeholder="Pesquise por ofertas"
           />
-          <ul class="list-group" style="position:absolute">
-            <li *ngFor="let ofer of ofertas | async" class="list-group-item">{{ ofer.titulo | descricaoReduzida:13 }}</li>
+          <ul class="list-group" style="position:absolute; z-index: 999">
+            <li *ngFor="let ofer of ofertas | async" class="list-group-item">
+              <a [routerLink]="['/oferta', ofer.id]" (click)="limpaPesquisa()">
+                {{ ofer.titulo | descricaoReduzida:13 }}
+              </a>
+              </li>
           </ul>
         </div>
         <div class="col-md-2">

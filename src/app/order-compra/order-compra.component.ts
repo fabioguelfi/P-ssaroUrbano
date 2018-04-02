@@ -1,3 +1,4 @@
+import { Pedido } from './../shared/pedido.model';
 import { OrdemCompraService } from './../ordem-compra.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-compra.component.css'],
   providers: [OrdemCompraService]
 })
+
 export class OrderCompraComponent implements OnInit {
 
+  public pedido: Pedido = new Pedido('', '', '', '')
+
   public endereco: string = ''
-  public numero: number = null
+  public numero: string = ''
   public complemento: string = ''
   public formaPagamento: string = ''
 
@@ -54,7 +58,7 @@ export class OrderCompraComponent implements OnInit {
 
   }
 
-  public atualizaNumero(numero: number): void {
+  public atualizaNumero(numero: string): void {
     this.numero = numero
     //console.log(numero)
 
@@ -106,6 +110,16 @@ export class OrderCompraComponent implements OnInit {
     } else {
       this.formEstado = 'disabled'
     }
+  }
+
+  public confirmarCompra(): void {
+    this.pedido.endereco = this.endereco
+    this.pedido.numero = this.numero
+    this.pedido.complemento = this.complemento
+    this.pedido.formaPagamento = this.formaPagamento
+
+    this.ordemCompraService.efetivarCompra(this.pedido)
+
   }
 
 }

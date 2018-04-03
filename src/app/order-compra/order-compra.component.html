@@ -121,7 +121,7 @@
       </div>
 
       <hr />
-      <button type="submit" class="btn btn-primary btn-lg">Confirmar compra</button>
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="formulario.valid ? '' : 'disabled'">Confirmar compra</button>
     </form>
   </div>
 

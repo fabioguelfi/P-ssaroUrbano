@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-order-compra',
@@ -13,6 +14,10 @@ export class OrderCompraComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  public confirmarCompra(formulario: NgForm): void {
+    console.log(formulario.value)
   }
 
 

@@ -61,9 +61,6 @@
       </div>
       <br />
 
-      <pre>valido {{ formulario.valid | json }}</pre>
-      <pre>invalido {{ formulario.invalid | json }}</pre>
-      <pre>{{ formulario.value | json }}</pre>
       <h5>Dados de entrega</h5>
       <hr />
 
@@ -124,7 +121,7 @@
       </div>
 
       <hr />
-      <button type="submit" class="btn btn-primary btn-lg">Confirmar compra</button>
+      <button type="submit" class="btn btn-primary btn-lg" [disable]="undefined">Confirmar compra</button>
     </form>
   </div>
 

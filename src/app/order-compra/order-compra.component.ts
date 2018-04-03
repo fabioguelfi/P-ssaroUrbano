@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-order-compra',
@@ -9,6 +9,12 @@ import { NgForm } from '@angular/forms';
 
 export class OrderCompraComponent implements OnInit {
 
+  public formulario: FormGroup = new FormGroup({
+    'endereco': new FormControl(null),
+    'numero': new FormControl(null),
+    'complemento': new FormControl(null),
+    'formaPagamento': new FormControl(null)
+  })
 
   constructor(
   ) { }

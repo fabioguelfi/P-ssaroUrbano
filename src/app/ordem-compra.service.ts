@@ -22,7 +22,7 @@ export class OrdemCompraService {
 
         return this.http.post(
             `${URL_API}/pedidos`, 
-            JSON.stringify(pedido),
+            pedido,
             new RequestOptions({ headers: headers })
         )
         .map((res: Response) => res.json())

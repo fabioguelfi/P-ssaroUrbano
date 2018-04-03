@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 
 export class OrderCompraComponent implements OnInit {
 
+  @ViewChild('formulario') public formulario: NgForm
 
   constructor(
   ) { }
@@ -16,10 +17,8 @@ export class OrderCompraComponent implements OnInit {
   ngOnInit() {
   }
 
-  public confirmarCompra(formulario: NgForm): void {
-    console.log(formulario.value)
+  public confirmarCompra(): void {
+    console.log(this.formulario.value)
   }
-
-
 
 }

@@ -25,6 +25,6 @@ export class OrdemCompraService {
             pedido,
             new RequestOptions({ headers: headers })
         )
-        .map((res: Response) => res.json())
+        .map((res: Response) => res.json().id )
     }
 }

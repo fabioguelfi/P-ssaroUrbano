@@ -22,5 +22,9 @@ export class OrderCompraComponent implements OnInit {
   ngOnInit() {
   }
 
+  public confirmarCompra(): void {
+    console.log(this.formulario)
+  }
+
 
 }

@@ -23,7 +23,7 @@ export class OrderCompraComponent implements OnInit {
   }
 
   public confirmarCompra(): void {
-    console.log(this.formulario)
+    console.log(this.formulario.status)
   }
 
 

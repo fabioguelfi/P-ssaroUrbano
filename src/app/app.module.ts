@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
-import { FormsModule } from '@angular/forms';
-// services
+// import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 //components
 import { AppComponent } from './app.component';
@@ -41,7 +42,8 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
   imports: [
     HttpModule,
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
+    //FormsModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [],

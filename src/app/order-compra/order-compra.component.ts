@@ -2,13 +2,13 @@ import { OrdemCompraService } from './../ordem-compra.service';
 import { Pedido } from './../shared/pedido.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import CarrinhoService from '../carrinho.service';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-order-compra',
   templateUrl: './order-compra.component.html',
   styleUrls: ['./order-compra.component.css'],
-  providers: [OrdemCompraService, CarrinhoService]
+  providers: [OrdemCompraService]
 })
 
 export class OrderCompraComponent implements OnInit {

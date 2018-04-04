@@ -17,11 +17,14 @@ import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { OrderCompraComponent } from './order-compra/order-compra.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
 
 // pipe
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
-import { OrderCompraComponent } from './order-compra/order-compra.component';
-import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+
+// service
+import { CarrinhoService } from './carrinho.service';
 
 
 @NgModule({
@@ -37,7 +40,7 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
     OndeFicaComponent,
     DescricaoReduzida,
     OrderCompraComponent,
-    OrdemCompraSucessoComponent
+    OrdemCompraSucessoComponent,
   ],
   imports: [
     HttpModule,
@@ -46,7 +49,7 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
     //FormsModule,
     RouterModule.forRoot(ROUTES),
   ],
-  providers: [],
+  providers: [CarrinhoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

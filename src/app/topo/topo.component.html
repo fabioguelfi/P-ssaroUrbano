@@ -8,7 +8,7 @@
           </a>
         </div>
         <div class="col-md-6">
-            <!-- {{ oferta | json | uppercase | lowercase }} -->
+          <!-- {{ oferta | json | uppercase | lowercase }} -->
           <input (keyup)="pesquisa(termoDaPesquisa.value)" #termoDaPesquisa type="text" class="form-control" placeholder="Pesquise por ofertas"
           />
           <ul class="list-group" style="position:absolute; z-index: 999">
@@ -16,11 +16,11 @@
               <a [routerLink]="['/oferta', ofer.id]" (click)="limpaPesquisa()">
                 {{ ofer.titulo | descricaoReduzida:13 }}
               </a>
-              </li>
+            </li>
           </ul>
         </div>
         <div class="col-md-2">
-          <a a href="#">
+          <a routerLink="/ordem-compra">
             <img src="/assets/carrinho.png" />
           </a>
         </div>

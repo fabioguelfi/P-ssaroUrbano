@@ -40,11 +40,9 @@ export class OrderCompraComponent implements OnInit {
       this.formulario.value.complemento,
       this.formulario.value.formaPagamento
     )
-    console.log(pedido)
     this.ordemCompraService.efetivarCompra(pedido).subscribe(
       (idPedido: number) => {
         this.idPedidoCompra = idPedido
-        console.log(this.idPedidoCompra)
       },
       (err) => {
 
@@ -53,6 +51,10 @@ export class OrderCompraComponent implements OnInit {
 
       }
     )
+  }
+
+  public adicionar(item: ItemCarrinho): void {
+    this.carrinhoService.adicionarQuantidade(item)
   }
 
 

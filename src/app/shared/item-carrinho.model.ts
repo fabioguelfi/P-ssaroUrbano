@@ -4,7 +4,8 @@ class ItemCarrinho {
         public img: object,
         public titulo: object,
         public descricao_oferta: object,
-        public valor: object
+        public valor: object,
+        public quantidade?: number
     ) { }
 }
 

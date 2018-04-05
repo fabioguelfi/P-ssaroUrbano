@@ -14,13 +14,13 @@ class CarrinhoService {
             oferta.imagens[0],
             oferta.titulo,
             oferta.descricao_oferta,
-            oferta.valor
+            oferta.valor,
+            0
         )
 
         // verificar se o item em questao ja nao existe em this.itens
 
         let itemCarrinhoEncontrado = this.itens.find((item: ItemCarrinho) => item.id === itemCarrinho.id)
-
         if (itemCarrinhoEncontrado) {
             itemCarrinhoEncontrado.quantidade += 1
         } else {

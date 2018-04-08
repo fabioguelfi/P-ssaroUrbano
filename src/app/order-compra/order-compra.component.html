@@ -7,7 +7,7 @@
 
       <div *ngFor="let itens of itensCarrinho" class="form-row" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
         <div class="form-group col-sm-1">
-          <img [src]="itens.img.url" class="img-fluid"/>
+          <img [src]="itens.img.url" class="img-fluid" />
         </div>
         <!-- {{itens?.img.url}} -->
         <div class="form-group col-sm-6">
@@ -18,7 +18,7 @@
         <div>
           <div class="row">
             <div class="col">
-              <button type="button" class="btn btn-link">-</button>
+              <button (click)="diminuir(itens)" type="button" class="btn btn-link">-</button>
               {{ itens?.quantidade }}
               <button (click)="adicionar(itens)" type="button" class="btn btn-link">+</button>
             </div>

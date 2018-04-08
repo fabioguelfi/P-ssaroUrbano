@@ -52,6 +52,10 @@ class CarrinhoService {
 
         if (itemCarrinhoEncontrado) {
             itemCarrinhoEncontrado.quantidade -= 1
+
+            if (itemCarrinhoEncontrado.quantidade === 0) {
+                let x = this.itens.splice(this.itens.indexOf(itemCarrinhoEncontrado), 1)
+            }
         }
 
     }

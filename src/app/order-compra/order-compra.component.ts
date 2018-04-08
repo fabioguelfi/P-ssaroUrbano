@@ -46,18 +46,18 @@ export class OrderCompraComponent implements OnInit {
       this.formulario.value.formaPagamento,
       this.carrinhoService.exibirItens()
     )
-    console.log(pedido)
-    this.ordemCompraService.efetivarCompra(pedido).subscribe(
-      (idPedido: number) => {
-        this.idPedidoCompra = idPedido
-      },
-      (err) => {
-
-      },
-      () => {
-
-      }
-    )
+    this.ordemCompraService.efetivarCompra(pedido)
+      .subscribe(
+        (idPedido: number) => {
+          this.idPedidoCompra = idPedido
+        },
+        (err) => {
+          console.log(err)
+        },
+        () => {
+          this.carrinhoService.limparCarrinho()
+        }
+      )
   }
 
   public adicionar(item: ItemCarrinho): void {

@@ -34,6 +34,11 @@ export class OrderCompraComponent implements OnInit {
   }
 
   public confirmarCompra(): void {
+
+    if (this.carrinhoService.exibirItens().length === 0) {
+      alert('voce nao selecionou nenhum item')
+    }
+
     let pedido: Pedido = new Pedido(
       this.formulario.value.endereco,
       this.formulario.value.numero,

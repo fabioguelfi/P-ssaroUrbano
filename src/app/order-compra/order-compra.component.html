@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="itensCarrinho.length !== 0; else ifHaventItens" class="container">
   <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
     <form [formGroup]="formulario" (ngSubmit)="confirmarCompra()" novalidate>
 
@@ -85,5 +85,9 @@
   <div class="ordem-compra" *ngIf="idPedidoCompra !== undefined">
     <app-ordem-compra-sucesso [idPedidoCompra]="idPedidoCompra"></app-ordem-compra-sucesso>
   </div>
-
 </div>
+<ng-template #ifHaventItens>
+  <div class="d-flex justify-content-center">
+    <h4>Voce ainda nao possui itens, deveria aproveitar as ofertas</h4>
+  </div>
+</ng-template>
